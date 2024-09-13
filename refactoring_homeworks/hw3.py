@@ -52,6 +52,9 @@ def add_lines(text):
 def fix_iz(text):
     return text.replace(" iz", " is")
 
+def count_spaces(text):
+    return text.count(" ") + text.count("\xa0")
+
 text_without_lines = remove_lines(remove_empty_lines(hw_text))
 sentences = create_sentences(text_without_lines)
 additional_sentence = create_additional_sentence(sentences)
@@ -59,5 +62,5 @@ formatted_text = format_text(sentences,additional_sentence)
 final_text = fix_iz(add_lines(formatted_text))
 print(final_text)
 
-print(final_text.count(" ") + final_text.count("\xa0"))
+print(count_spaces(final_text))
 
